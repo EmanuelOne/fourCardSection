@@ -21,6 +21,7 @@ body {
 }
 h1 {
   text-align: center;
+  font-size: 2rem;
 }
 h1:first-of-type {
   font-weight: 100;
@@ -77,4 +78,44 @@ p:not(.box p) {
   gap: 2.5rem;
   place-content: center;
   place-items: center;
+}
+/* media query */
+@media (min-width: 375px) and (max-width: 800px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .box:nth-of-type(odd) {
+    transform: translateY(0%);
+  }
+  p:not(.box p) {
+    width: 80%;
+  }
+  .box p {
+    width: 90%;
+  }
+  body {
+    padding: 0 2rem;
+  }
+}
+@media (max-width: 375px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .box:last-of-type {
+    grid-column: 1/2;
+  }
+  p:not(.box p) {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  body {
+    padding: 1rem 2rem;
+  }
+}
+/* view port */
+/* 375 - 800px */
+@media (min-width: 375px) and (max-width: 800px) {
 }
